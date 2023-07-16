@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <cuda.h>
+#include <cuda_runtime_api.h>
+#include <cuda_runtime.h>
 
 __global__ void hello() {
   printf("Hello CUDA! %d\n", threadIdx.x);
