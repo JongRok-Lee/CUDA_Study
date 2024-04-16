@@ -3,6 +3,9 @@
 #include <cuda_runtime_api.h>
 #include <cuda_runtime.h>
 
+#if defined(NDEBUG)
+#define CUDA_CHECK_ERROR() 0
+#else
 #define CUDA_CHECK_ERROR() \
   do { \
     cudaError_t e = cudaGetLastError(); \
@@ -11,6 +14,7 @@
       exit(1); \
     } \
   } while (0)
+#endif
 
 __global__ void add_kernel(float *b, const float *a) {
   int idx = threadIdx.x;
