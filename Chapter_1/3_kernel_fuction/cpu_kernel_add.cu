@@ -12,7 +12,7 @@ int main()
   const int b[SIZE] = {10, 20, 30, 40, 50};
   int c[SIZE] = {0,};
 
-  for  (register int i = 0; i < SIZE; i++) {
+  for (int i = 0; i < SIZE; i++) {
     add_kernel(i, a, b, c);
   }
 
